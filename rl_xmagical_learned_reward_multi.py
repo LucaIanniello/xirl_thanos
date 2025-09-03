@@ -48,9 +48,11 @@ def run_seed(seed, kwargs, world_size, env_name, experiment_name):
     port = int(FLAGS.port_number) + (seed * 10)  # Unique port for each seed
     cmd = [
         "torchrun",
-        "--rdzv_backend=c10d",
-        f"--rdzv_endpoint=localhost:{port}",
-        "--max-restarts", "0",
+        f"--nnodes=1",
+        f"--nproc-per-node={world_size}",
+        f"--rdzv-id={seed}",
+        f"--rdzv-backend=c10d",
+        f"--rdzv-endpoint=localhost:{port}",
         "train_policy_multi.py",
         "--experiment_name", f"{experiment_name}_seed{seed}",
         "--env_name", env_name,
