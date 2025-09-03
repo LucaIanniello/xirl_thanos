@@ -1,4 +1,3 @@
-$ cat jobs/pytorch.job
 #!/bin/bash
 #SBATCH --job-name=1Subtask_Xirl_Allo_Seed_42
 #SBATCH --output=1Subtask_Xirl_Allo_Seed_42.log
