@@ -48,7 +48,6 @@ def run_seed(seed, kwargs, world_size, env_name, experiment_name):
     port = int(FLAGS.port_number) + (seed * 10)  # Unique port for each seed
     cmd = [
         "torchrun",
-        f"--nprocs_per_node={world_size}",
         "--rdzv_backend=c10d",
         f"--rdzv_endpoint=localhost:{port}",
         "--max-restarts", "0",
