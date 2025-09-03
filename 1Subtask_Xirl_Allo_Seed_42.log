@@ -1,0 +1,30 @@
+Wed Sep  3 21:05:58 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.12             Driver Version: 535.104.12   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce GTX 1080        On  | 00000000:04:00.0 Off |                  N/A |
+| 27%   30C    P8               5W / 180W |      2MiB /  8192MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA GeForce GTX 1080        On  | 00000000:06:00.0 Off |                  N/A |
+| 28%   30C    P8               5W / 180W |      2MiB /  8192MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+I0903 21:06:00.877270 140682917930816 rl_xmagical_learned_reward_multi.py:101] Experiment name: env_name=SweepToTop-Gripper-State-Allo-TestLayout-v0_reward=learned_reward_type=holdr_mode=same_algo=xirl_uid=1c189d50
+Usage: torchrun [OPTIONS]
+Try 'torchrun --help' for help.
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ No such option: --nproc_per_node                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
