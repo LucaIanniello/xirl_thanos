@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=1Subtask_Xirl_Allo_Seed_42
 #SBATCH --output=1Subtask_Xirl_Allo_Seed_42.log
-#SBATCH --gpus=4
+#SBATCH --gpus=2
 #SBATCH --cpus-per-gpu=3
 #SBATCH --mem-per-cpu=4GB
 
