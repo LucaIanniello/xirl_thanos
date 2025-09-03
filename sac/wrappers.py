@@ -210,7 +210,7 @@ class VideoRecorder(gym.Wrapper):
     observation, reward, done, info = self.env.step(action)
     if done:
       filename = os.path.join(self.save_dir, f"{self.current_episode}.mp4")
-      imageio.mimsave(filename, self.frames, fps=self.fps)
+    #   imageio.mimsave(filename, self.frames, fps=self.fps)
       self.frames = []
       self.current_episode += 1
     return observation, reward, done, info
