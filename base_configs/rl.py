@@ -33,7 +33,7 @@ def get_config():
   # ================================================= #
   # Main parameters.
   # ================================================= #
-  config.save_dir = "/home/liannello/xirl/experiment_results/Egocentric/Results"
+  config.save_dir = "/home/liannello/results/"
 
   # Set this to True to allow CUDA to find the best convolutional algorithm to
   # use for the given parameters. When False, cuDNN will deterministically

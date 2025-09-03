@@ -22,9 +22,9 @@ PORT=$((29000 + SLURM_JOB_ID % 100))
 python rl_xmagical_learned_reward_multi.py \
    --pretrained_path /home/liannello/Egocentric_Pretrain/dataset=xmagical_mode=same_algo=xirl_embodiment=gripper_EGO_6Subtask \
    --seeds 1 \
-        --wandb \
-    --port_number $PORT \
-     --name_test 6Subtask_Xirl_Allo_Seed_42
+   --wandb \
+   --port_number $PORT \
+   --name_test 6Subtask_Xirl_Allo_Seed_42
 
 # python compute_goal_embedding.py --experiment_path /home/liannello/xirl/experiment_results/6Subtask/dataset=xmagical_mode=same_algo=reds_embodiment=gripper
 #MULTIGPU Pretraining
