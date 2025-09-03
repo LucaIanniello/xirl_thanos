@@ -39,7 +39,6 @@ dependencies:
       - charset-normalizer==3.4.2
       - clang==5.0
       - click==8.1.8
-      - clip==1.0
       - cloudpickle==1.6.0
       - contextlib2==21.6.0
       - contourpy==1.1.1
