@@ -829,8 +829,8 @@ class HOLDRLearnedVisualReward(LearnedVisualReward):
         
             # print(f"WRAPPER- Step:{self.index_seed_step}, reward: {reward}, subtask: {self._subtask}. distance: {dist}")
             
-        # intrinsic_bonus = self._compute_intrinsic_reward(emb)
-        # reward += self._intrinsic_scale * intrinsic_bonus
+        intrinsic_bonus = self._compute_intrinsic_reward(emb)
+        reward += self._intrinsic_scale * intrinsic_bonus
         return reward
       
 

@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=1Subtask_Xirl_Allo_Seed_42
-#SBATCH --output=1Subtask_Xirl_Allo_Seed_42.log
+#SBATCH --job-name=1Subtask_Xirl_Allo
+#SBATCH --output=1Subtask_Xirl_Allo.log
 #SBATCH --gpus=2
 #SBATCH --cpus-per-gpu=3
 #SBATCH --mem-per-cpu=4GB
@@ -24,7 +24,7 @@ python rl_xmagical_learned_reward_multi.py \
    --seeds 1 \
    --wandb \
    --port_number $PORT \
-   --name_test 6Subtask_Xirl_Allo_Seed_42
+   --name_test 6Subtask_Xirl_Allo_Seed_50
 
 # python compute_goal_embedding.py --experiment_path /home/liannello/xirl/experiment_results/6Subtask/dataset=xmagical_mode=same_algo=reds_embodiment=gripper
 #MULTIGPU Pretraining
