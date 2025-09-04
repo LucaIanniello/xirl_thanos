@@ -1,4 +1,4 @@
-Wed Sep  3 21:05:58 2025       
+Thu Sep  4 10:38:53 2025       
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 535.104.12             Driver Version: 535.104.12   CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
@@ -7,11 +7,11 @@ Wed Sep  3 21:05:58 2025
 |                                         |                      |               MIG M. |
 |=========================================+======================+======================|
 |   0  NVIDIA GeForce GTX 1080        On  | 00000000:04:00.0 Off |                  N/A |
-| 27%   30C    P8               5W / 180W |      2MiB /  8192MiB |      0%      Default |
+| 27%   29C    P8               5W / 180W |      2MiB /  8192MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 |   1  NVIDIA GeForce GTX 1080        On  | 00000000:06:00.0 Off |                  N/A |
-| 28%   30C    P8               5W / 180W |      2MiB /  8192MiB |      0%      Default |
+| 27%   30C    P8               5W / 180W |      2MiB /  8192MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
                                                                                          
@@ -22,9 +22,83 @@ Wed Sep  3 21:05:58 2025
 |=======================================================================================|
 |  No running processes found                                                           |
 +---------------------------------------------------------------------------------------+
-I0903 21:06:00.877270 140682917930816 rl_xmagical_learned_reward_multi.py:101] Experiment name: env_name=SweepToTop-Gripper-State-Allo-TestLayout-v0_reward=learned_reward_type=holdr_mode=same_algo=xirl_uid=1c189d50
-Usage: torchrun [OPTIONS]
-Try 'torchrun --help' for help.
-╭─ Error ──────────────────────────────────────────────────────────────────────╮
-│ No such option: --nproc_per_node                                             │
-╰──────────────────────────────────────────────────────────────────────────────╯
+I0904 10:39:23.119500 139833356572480 rl_xmagical_learned_reward_multi.py:101] Experiment name: env_name=SweepToTop-Gripper-State-Allo-TestLayout-v0_reward=learned_reward_type=holdr_mode=same_algo=xirl_uid=1c189d50
+W0904 10:39:25.635271 140057328232256 torch/distributed/run.py:779] 
+W0904 10:39:25.635271 140057328232256 torch/distributed/run.py:779] *****************************************
+W0904 10:39:25.635271 140057328232256 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0904 10:39:25.635271 140057328232256 torch/distributed/run.py:779] *****************************************
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+/home/liannello/xirl_thanos/xirl/models.py:440: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @torch.cuda.amp.autocast()
+/home/liannello/xirl_thanos/xirl/models.py:440: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @torch.cuda.amp.autocast()
+Loading chipmunk for Linux (64bit) [/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/pymunk/libchipmunk.so]
+Loading chipmunk for Linux (64bit) [/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/pymunk/libchipmunk.so]
+pygame 2.6.1 (SDL 2.28.4, Python 3.8.20)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+pygame 2.6.1 (SDL 2.28.4, Python 3.8.20)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[DDP INIT] PID=9025 RANK=0 LOCAL_RANK=0 WORLD_SIZE=2 CUDA_VISIBLE_DEVICES=0,1 torch.cuda.device_count()=2
+[DDP INIT] PID=9026 RANK=1 LOCAL_RANK=1 WORLD_SIZE=2 CUDA_VISIBLE_DEVICES=0,1 torch.cuda.device_count()=2
+[W904 10:39:45.007186412 Utils.hpp:164] Warning: Environment variable NCCL_BLOCKING_WAIT is deprecated; use TORCH_NCCL_BLOCKING_WAIT instead (function operator())
+[DDP INIT] PID=9026 RANK=1 LOCAL_RANK=1 initializing device (torch.cuda.device_count()=2)
+[W904 10:39:45.009479687 Utils.hpp:164] Warning: Environment variable NCCL_BLOCKING_WAIT is deprecated; use TORCH_NCCL_BLOCKING_WAIT instead (function operator())
+[DDP INIT] PID=9025 RANK=0 LOCAL_RANK=0 initializing device (torch.cuda.device_count()=2)
+[DDP INIT] PID=9025 RANK=0 Set device to cuda:0 successfully.
+[DDP TRAINING START] PID=9025 RANK=0 DEVICE=cuda:0 Starting training loop.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "train_policy_multi.py", line 706, in <module>
+[rank0]:     app.run(main)
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/absl/app.py", line 312, in run
+[rank0]:     _run_main(main, args)
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/absl/app.py", line 258, in _run_main
+[rank0]:     sys.exit(main(argv))
+[rank0]:   File "train_policy_multi.py", line 216, in main
+[rank0]:     wandb.init(project="MultipleSeeds6Subtask", group="Test", name="Test", mode="online")
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 1623, in init
+[rank0]:     wandb._sentry.reraise(e)
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/wandb/analytics/sentry.py", line 156, in reraise
+[rank0]:     raise exc.with_traceback(sys.exc_info()[2])
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 1551, in init
+[rank0]:     wi.maybe_login(init_settings)
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 191, in maybe_login
+[rank0]:     wandb_login._login(
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/wandb/sdk/wandb_login.py", line 315, in _login
+[rank0]:     key, key_status = wlogin.prompt_api_key(referrer=referrer)
+[rank0]:   File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/wandb/sdk/wandb_login.py", line 243, in prompt_api_key
+[rank0]:     raise UsageError("api_key not configured (no-tty). call " + directive)
+[rank0]: wandb.errors.errors.UsageError: api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+[DDP INIT] PID=9026 RANK=1 Set device to cuda:1 successfully.
+[DDP TRAINING START] PID=9026 RANK=1 DEVICE=cuda:1 Starting training loop.
+W0904 10:39:47.029499 140057328232256 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 9026 closing signal SIGTERM
+E0904 10:39:47.193803 140057328232256 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 0 (pid: 9025) of binary: /home/liannello/miniconda3/envs/xirl/bin/python
+Traceback (most recent call last):
+  File "/home/liannello/miniconda3/envs/xirl/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/liannello/miniconda3/envs/xirl/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train_policy_multi.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-09-04_10:39:47
+  host      : node1
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 9025)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
