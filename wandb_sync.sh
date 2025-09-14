@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=wandb_sync
 #SBATCH --output=wandb_sync.log
-#SBATCH --gpus=1
+#SBATCH --gpus=0
 #SBATCH --cpus-per-task=8
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=100GB
