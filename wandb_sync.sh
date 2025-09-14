@@ -6,20 +6,17 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=100GB
 
-
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate xirl
 
-
 # Path to your zip
 ZIPFILE=/home/liannello/wandb_to_sync/all_runs.zip
-WORKDIR=$SLURM_TMPDIR/wandb_sync
+ZIPDIR=$(dirname "$ZIPFILE")
 
-mkdir -p "$WORKDIR"
-cd "$WORKDIR"
+cd "$ZIPDIR"
 
-# Unzip the runs
-unzip "$ZIPFILE"
+# Unzip the runs (will extract into the same directory as the zip)
+unzip -n "$ZIPFILE"
 
 # Loop through each run directory and sync
 for run_dir in offline-run-*; do
